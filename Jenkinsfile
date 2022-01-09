@@ -13,7 +13,7 @@ pipeline {
 		GO111MODULES = 'on'
 	}
 	steps {
-         sh 'go build main.go'
+         sh 'go build main.go -o main.exe'
         }
 	
    }
@@ -27,7 +27,7 @@ pipeline {
 
  post {
   	success {
-  		archiveArtifacts(artifacts: 'target/binary/*', fingerprint: true, followSymlinks: false)
+  		archiveArtifacts(artifacts: 'target/wins/main.*', fingerprint: true, followSymlinks: false)
   	}
  }
 
