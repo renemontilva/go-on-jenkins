@@ -27,7 +27,7 @@ pipeline {
 
  post {
   	success {
-  		archiveArtifacts(artifacts: 'target/binary', fingerprint: true, followSymlinks: false)
+  		archiveArtifacts(artifacts: 'target/binary/*', fingerprint: true, followSymlinks: false)
   	}
  }
 
