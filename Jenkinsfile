@@ -23,7 +23,12 @@ pipeline {
        	sh './main' 
        }
    }
+ }
 
+ post {
+  	success {
+  		archiveArtifacts(artifacts: 'target/binary', fingerprint: true, followSymlinks: false)
+  	}
  }
 
 }
