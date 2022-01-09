@@ -4,8 +4,8 @@ pipeline {
  
  stages {
    stage("build") {
-	environments {
-		GO111MODULES=on
+	environment {
+		GO111MODULES = 'on'
 	}
 
 	steps {
