@@ -19,7 +19,7 @@ pipeline {
    }
    stage('Code Coverage Analyst') {
        tools {
-	sonarqube 'sonarqube4'
+	sonarQube 'sonarqube4'
        }
        steps {
        		withSonarQubeEnv('SonarQube') {
