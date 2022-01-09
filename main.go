@@ -1,6 +1,5 @@
 package main
 
-import "fmt"
 
 func main() {
 	var name string
@@ -8,6 +7,6 @@ func main() {
 	Hello(name)
 }
 
-func Hello(name string) {
-	fmt.Println(name)
+func Hello(name string) string {
+	return name
 }

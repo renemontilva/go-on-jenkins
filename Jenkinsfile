@@ -13,21 +13,25 @@ pipeline {
 		GO111MODULES = 'on'
 	}
 	steps {
-         sh 'go build main.go -o main.exe'
+         sh 'go build -o binary/app main.go'
         }
 	
    }
-   stage('Run Build') {
-
+   stage('Code Coverage Analyst') {
+       tools {
+	sonarqube 'sonarqube4'
+       }
        steps {
-       	sh './main' 
+       		withSonarQubeEnv('SonarQube') {
+			sh 'sonar-scanner'
+		}
        }
    }
  }
 
  post {
   	success {
-  		archiveArtifacts(artifacts: 'target/wins/main.*', fingerprint: true, followSymlinks: false)
+  		archiveArtifacts(artifacts: 'binary/*', fingerprint: true, followSymlinks: false)
   	}
  }
 
