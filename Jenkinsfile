@@ -18,10 +18,15 @@ pipeline {
 	
    }
    stage('Code Coverage Analyst') {
+       environment {
+	scannerHome = tool 'sonar-scanner'
+
+       }
 
        steps {
 	withSonarQubeEnv('sonarqube') {
-		echo '${SONAR_HOST_URL}'
+		sh "echo ${SONAR_HOST_URL}"
+	        
 	}
        }
    }
