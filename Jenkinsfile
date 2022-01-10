@@ -4,8 +4,6 @@ pipeline {
 
  tools {
   go 'go_17'
-  sonarQube 'sonarqube4'
-
  }
  
  stages {
