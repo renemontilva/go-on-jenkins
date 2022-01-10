@@ -35,8 +35,7 @@ pipeline {
   			    -Dsonar.projectKey=gotest \
   			    -Dsonar.sources=. \
   			    -Dsonar.host.url=http://sonarqube:9000 \
-                            -Dsonar.login=2dc163d58e4325f92cb58462288c627a49a4472f
-			"
+                            -Dsonar.login=2dc163d58e4325f92cb58462288c627a49a4472f"
 		}
        }
    }
