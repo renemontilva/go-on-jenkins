@@ -20,7 +20,7 @@ pipeline {
    stage('Code Coverage Analyst') {
 
        steps {
-	withSonarQubeEnv('sonarqube4') {
+	withSonarQubeEnv('sonarqube') {
 		echo '${SONAR_HOST_URL}'
 	}
        }
