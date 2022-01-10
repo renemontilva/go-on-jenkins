@@ -22,7 +22,9 @@ pipeline {
    stage('Code Coverage Analyst') {
 
        steps {
-	sh './binary/.app'
+	withSonarQubeEnv('sonarqube4') {
+		echo '${SONAR_HOST_URL}'
+	}
        }
    }
  }
