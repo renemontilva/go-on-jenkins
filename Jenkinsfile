@@ -25,7 +25,7 @@ pipeline {
 
        steps {
 	withSonarQubeEnv('sonarqube') {
-		sh "echo ${SONAR_HOST_URL}"
+		sh "echo ${scannerHome}"
 	        
 	}
        }
