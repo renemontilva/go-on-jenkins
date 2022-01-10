@@ -4,6 +4,7 @@ pipeline {
 
  tools {
   go 'go_17'
+  sonarQube 'sonarqube4'
 
  }
  
@@ -20,14 +21,8 @@ pipeline {
    }
    stage('Code Coverage Analyst') {
 
-       tools {
-	sonarQube 'sonarqube4'
-       }
-
        steps {
-       		withSonarQubeEnv('SonarQube') {
-			sh 'sonar-scanner'
-		}
+	sh './binary/.app'
        }
    }
  }
