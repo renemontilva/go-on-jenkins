@@ -1,10 +1,12 @@
 package main
 
 
+import "fmt"
+
 func main() {
 	var name string
 	name = "Hello World"
-	Hello(name)
+	fmt.Println(Hello(name))
 }
 
 func Hello(name string) string {

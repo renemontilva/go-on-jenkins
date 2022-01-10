@@ -7,6 +7,11 @@ pipeline {
  }
  
  stages {
+   stage("test") {
+        steps {
+		sh "go test"
+	}
+   }
    stage("build") {
 	environment {
 		GO111MODULES = 'on'
@@ -24,10 +29,9 @@ pipeline {
        }
 
        steps {
-	withSonarQubeEnv('sonarqube') {
-		sh "echo ${scannerHome}"
-	        
-	}
+		withSonarQubeEnv('sonarqube') {
+			sh "env"
+		}
        }
    }
  }
