@@ -24,14 +24,14 @@ pipeline {
    }
    stage('Code Coverage Analyst') {
        environment {
-	scannerHome = tool 'sonar-scanner'
+	scannerHome = tool name: 'sonar-scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
 
        }
 
        steps {
 		withSonarQubeEnv('sonarqube') {
 			sh "env"
-			sh "sonar-scanner"
+			sh "${scannerHome}/bin/sonar-scanner"
 		}
        }
    }
