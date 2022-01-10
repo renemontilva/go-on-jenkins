@@ -14,6 +14,7 @@ pipeline {
 	}
 	steps {
          sh 'go build -o binary/app main.go'
+  	 archiveArtifacts(artifacts: 'binary/*', fingerprint: true, followSymlinks: false)
         }
 	
    }
